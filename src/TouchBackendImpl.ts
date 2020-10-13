@@ -331,6 +331,7 @@ export class TouchBackendImpl implements Backend {
 			if (droppedOn === node || childMatch) {
 				return this.handleMove(e, targetId)
 			}
+			// Added this extra condition to cover cases when two drop targets are next to each other
 			else if (coords) {
 				const elements = this.document.elementsFromPoint(coords.x, coords.y);
 				const found = elements.find(el => node === el);

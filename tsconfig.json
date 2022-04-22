@@ -1,6 +1,13 @@
 {
-  "extends": "../../../tsconfig.base.json",
+  "extends": "@tsconfig/strictest",
   "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "lib": ["ESNext", "DOM"],
+    "jsx": "react-jsx",
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
     "outDir": "./lib",
     "baseUrl": "./"
   },

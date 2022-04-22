@@ -7,21 +7,21 @@ export interface EventName {
 }
 
 export interface TouchBackendOptions {
-	delay?: number
-	delayTouchStart?: number
-	enableTouchEvents?: boolean
-	enableKeyboardEvents?: boolean
-	enableMouseEvents?: boolean
-	ignoreContextMenu?: boolean
-	enableHoverOutsideTarget?: boolean
-	delayMouseStart?: number
-	touchSlop?: number
-	scrollAngleRanges?: AngleRange[]
-	getDropTargetElementsAtPoint?: (
-		x: number,
-		y: number,
-		dropTargets: HTMLElement[],
-	) => HTMLElement[]
+	delay: number
+	delayTouchStart: number
+	enableTouchEvents: boolean
+	enableKeyboardEvents: boolean
+	enableMouseEvents: boolean
+	ignoreContextMenu: boolean
+	enableHoverOutsideTarget: boolean
+	delayMouseStart: number
+	touchSlop: number
+	scrollAngleRanges?: AngleRange[] | undefined
+	rootElement: Node | undefined
+
+	getDropTargetElementsAtPoint?:
+		| undefined
+		| ((x: number, y: number, dropTargets: HTMLElement[]) => HTMLElement[])
 }
 
 export interface AngleRange {
@@ -37,4 +37,5 @@ export enum ListenerType {
 
 export interface TouchBackendContext {
 	window?: Window
+	document?: Document
 }
